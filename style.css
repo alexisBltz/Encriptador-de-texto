@@ -1,0 +1,102 @@
+body{
+    background: #F3F5FC;
+}
+
+header{
+    padding: 40px;
+}
+div.container{
+    display: flex;
+    flex-direction: row;
+}
+
+div.entrada{
+    padding-left: 200px;
+    padding-top: 50px;
+    text-align: justify;
+    padding-right: 500px;
+}
+p2.adver{
+    font-family: 'Inter', sans-serif;
+    color: #495057;
+}
+
+
+
+section.adv{
+    padding: 10px;
+}
+
+
+button.Encriptar{
+    color: white;
+    background-color: #0A3871;
+    border-radius: 20px;
+    padding: 20px 112px;
+    border: #0A3871;
+    margin-right: 20px;
+}
+
+button.Desencriptar{
+    color: #0A3871;
+    background-color: #D8DFE8;
+    border-radius: 20px;
+    padding: 20px 100px;
+    border: 1px solid #0A3871;
+}
+
+textarea.texto{
+    border: 0;
+    background: #F3F5FC;
+    width: 500px;
+    height: 500px;
+    resize: none;
+    font-size:32px;
+    font-family: Inter, sans-serif;
+    color: #0A3871;
+    /*para que no aparezca el borde al momento de hacer click */
+    outline: none;
+}
+
+div.salida{
+    text-align: justify;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    height: 600px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    /*box-shadow: 0 0 5px 0 #495057;*/
+}
+
+.salida img {
+    /* Estilos para la imagen */
+    /*width: 100px;  Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Hace que la imagen se muestre como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.salida_section{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.salida_section p1{
+    color: #495057;
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+
+}
+.salida_section p2{
+    color: #495057;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+}
+
