@@ -45,7 +45,7 @@ button.Desencriptar{
     border: 1px solid #0A3871;
 }
 
-textarea.texto{
+#texto{
     border: 0;
     background: #F3F5FC;
     width: 500px;
@@ -98,5 +98,16 @@ div.salida{
     color: #495057;
     font-size: 16px;
     font-family: Inter, sans-serif;
+}
+
+.textoEncriptado{
+    width: 500px;
+    height: 500px;
+    resize: none;
+    font-size:32px;
+    font-family: Inter, sans-serif;
+    color: #495057;
+    /*para que no aparezca el borde al momento de hacer click */
+    outline: none;
 }
 

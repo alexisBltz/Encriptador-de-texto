@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Encriptador</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header> <img src="img/Logo-1.png"></header>
     <div class="container">
         <div class="entrada">
             <form>
-                <textarea placeholder="Ingrese el texto aqui" class="texto"></textarea>
+                <textarea placeholder="Ingrese el texto aqui" id="texto"></textarea>
             </form>
             <section class="adv">
                 <p2 class="adver">
@@ -19,8 +20,8 @@
                 </p2>
             </section>
             <section class="buttons">
-                <button class="Encriptar">Encriptar</button>
-                <button class="Desencriptar">Desencriptar</button>
+                <button type="submit" class="Encriptar"  onclick="encriptar()">Encriptar</button>
+                <button class="Desencriptar" onclick="desencriptar()">Desencriptar</button>
             </section>
 
         </div>
