@@ -14,19 +14,21 @@ function verificarEntrada(){
     return textoOriginal;
 }
 
-// Función para encriptar el texto
+function crearP(texto){
+    var textoElement = document.createElement('p');
+    textoElement.textContent = texto;
+    textoElement.classList.add('textoEncriptado');
+    var salidaContenedor = document.querySelector('.salida');
+    salidaContenedor.innerHTML = '';
+    salidaContenedor.appendChild(textoElement);
+}
 function encriptar(){
     var textoOriginal = verificarEntrada();
     if (!textoOriginal) return; // Salir si no hay texto original
 
     var textoEncriptado = encriptacion(textoOriginal);
 
-    var textoElement = document.createElement('p');
-    textoElement.textContent = textoEncriptado;
-    textoElement.classList.add('textoEncriptado');
-    var salidaContenedor = document.querySelector('.salida');
-    salidaContenedor.innerHTML = '';
-    salidaContenedor.appendChild(textoElement);
+    crearP(textoEncriptado)
 }
 
 function encriptacion(textoOriginal) {
@@ -39,19 +41,35 @@ function encriptacion(textoOriginal) {
 
 
 }
-
 function values(letra) {
+    // Hash para encriptar
+    const valores = {
+        'e': 'enter',
+        'i': 'imes',
+        'a': 'ai',
+        'o': 'ober',
+        'u': 'ufat'
+    };
+
     return valores[letra] || letra;
 }
 
-// Hash para encriptar
-const valores = {
-    'e': 'enter',
-    'i': 'imes',
-    'a': 'ai',
-    'o': 'ober',
-    'u': 'ufat'
-};
+function desencriptar(textoOriginal) {
+    var textoOriginal = verificarEntrada();
+    if (!textoOriginal) return; // Salir si no hay texto original
+
+    var textoEncriptado = desencriptacion(textoOriginal);
+
+    crearP(textoEncriptado)
+}
+function desencriptacion(textoOriginal){
+    if (['a', 'e', 'i', 'o', 'u'].some(letra => textoOriginal.includes(letra))) {
+       var textoDesencriptado = textoOriginal.replace(/ai/g, "a").replace(/enter/, "e").replace(/imes/, "i").replace(/ober/, "o").replace(/ufat/, "u");
+    }
+    console.log(textoDesencriptado)
+    return textoDesencriptado
+}
+
 
 
 
