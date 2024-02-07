@@ -30,36 +30,29 @@ function encriptar(){
 }
 
 function encriptacion(textoOriginal) {
-    let letrasPalabra = [textoOriginal.length]
-
-    for(var i=0; i < textoOriginal.length; i++){
-        //dividimos el texto en letras
-        letrasPalabra[i]=textoOriginal.substring(i,i+1);
-        //encriptamos las letras correspondientes
-        letrasPalabra[i]=values(letrasPalabra[i]);
+    //separa la palabra letra por letra
+    let letrasPalabra = textoOriginal.split('');
+    for(var i = 0; i < letrasPalabra.length; i++){
+        letrasPalabra[i] = values(letrasPalabra[i]);
     }
-    console.log(letrasPalabra)
-
-    return letrasPalabra.join('')
+    return letrasPalabra.join('');
 
 
 }
-function values(letrasPalabra){
-    switch(letrasPalabra) {
-            case 'e':
-                return 'enter';
-            case 'i':
-                return 'imes';
-            case 'a':
-                return 'ai';
-            case 'o':
-                return 'ober';
-            case 'u':
-                return 'ufat';
-            default:
-                return letrasPalabra;
-        }
+
+function values(letra) {
+    return valores[letra] || letra;
 }
+
+// Hash para encriptar
+const valores = {
+    'e': 'enter',
+    'i': 'imes',
+    'a': 'ai',
+    'o': 'ober',
+    'u': 'ufat'
+};
+
 
 
 
