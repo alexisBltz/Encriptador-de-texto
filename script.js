@@ -1,46 +1,32 @@
-
-function encriptar(){
-    //Recogo el texto escrito en la variable
-    var textoOriginal = document.getElementById('texto').value;
-
-    // Verificar si el texto contiene caracteres que no son minúsculas y sin acentos con expresiones regulares
-    if (!/^[a-záéíóúñ0-9,.!?;_\s]+$/.test(textoOriginal)) {
-        var text = 'El texto debe contener solo letras minúsculas y sin acentos'
+// Función para verificar la entrada de texto
+function verificarEntrada(){
+    let textoOriginal = document.getElementById('texto').value;
+    if (!/^[a-z,_\s]+$/.test(textoOriginal)) {
+        var text = 'El texto debe contener solo letras minúsculas y sin acentos';
         var textoElement = document.createElement('p');
-        // Agregar el texto encriptado al elemento
         textoElement.textContent = text;
-        // Agregar la clase CSS al elemento
         textoElement.classList.add('textoEncriptado');
-
-        var salidaContenedor = document.querySelector('.salida')
-
+        var salidaContenedor = document.querySelector('.salida');
         salidaContenedor.innerHTML = '';
-
         salidaContenedor.appendChild(textoElement);
-
-    } else {
-
-        var textoEncriptado=encriptacion(textoOriginal)
-
-        textoElement = document.createElement('p');
-
-
-
-        // Agregar el texto encriptado al elemento
-        textoElement.textContent = textoEncriptado;
-
-
-        // Agregar la clase CSS al elemento
-        textoElement.classList.add('textoEncriptado');
-
-        salidaContenedor = document.querySelector('.salida')
-
-        salidaContenedor.innerHTML = '';
-
-        salidaContenedor.appendChild(textoElement);
-
-
+        return;
     }
+    return textoOriginal;
+}
+
+// Función para encriptar el texto
+function encriptar(){
+    var textoOriginal = verificarEntrada();
+    if (!textoOriginal) return; // Salir si no hay texto original
+
+    var textoEncriptado = encriptacion(textoOriginal);
+
+    var textoElement = document.createElement('p');
+    textoElement.textContent = textoEncriptado;
+    textoElement.classList.add('textoEncriptado');
+    var salidaContenedor = document.querySelector('.salida');
+    salidaContenedor.innerHTML = '';
+    salidaContenedor.appendChild(textoElement);
 }
 
 function encriptacion(textoOriginal) {
