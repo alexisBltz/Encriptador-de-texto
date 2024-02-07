@@ -21,6 +21,8 @@ function crearP(texto){
     var salidaContenedor = document.querySelector('.salida');
     salidaContenedor.innerHTML = '';
     salidaContenedor.appendChild(textoElement);
+
+    copiar(texto)
 }
 function encriptar(){
     var textoOriginal = verificarEntrada();
@@ -64,12 +66,32 @@ function desencriptar(textoOriginal) {
 }
 function desencriptacion(textoOriginal){
     if (['a', 'e', 'i', 'o', 'u'].some(letra => textoOriginal.includes(letra))) {
-       var textoDesencriptado = textoOriginal.replace(/ai/g, "a").replace(/enter/, "e").replace(/imes/, "i").replace(/ober/, "o").replace(/ufat/, "u");
+       var textoDesencriptado = textoOriginal.replace(/ai/g, "a").replace(/enter/g, "e").replace(/imes/g, "i").replace(/ober/g, "o").replace(/ufat/g, "u");
     }
     console.log(textoDesencriptado)
     return textoDesencriptado
 }
 
+function copiar (texto){
+
+    var boton = document.createElement('button');
+
+    boton.textContent = 'Copiar';
+    boton.id = 'miBotonCopiar';
+
+    boton.addEventListener('click', function() {
+        navigator.clipboard.writeText(texto)
+                .then(() => {
+                    alert('Texto copiado al portapapeles')
+                })
+                .catch(err => {
+                    alert('Error al copiar al portapapeles:', err)
+                })
+        }
+    )
+    var contenedor = document.querySelector('.salida');
+    contenedor.appendChild(boton);
+}
 
 
 

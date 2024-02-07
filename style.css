@@ -111,3 +111,11 @@ div.salida{
     outline: none;
 }
 
+#miBotonCopiar{
+    color: #0A3871;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 150px;
+    border: 1px solid #0A3871;
+}
+
